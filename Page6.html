@@ -7,7 +7,9 @@
 <title>Send Your Answer ♡</title>
 
 <style>
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
 body {
   margin: 0;
@@ -31,9 +33,13 @@ body {
   box-shadow: 0 8px 25px #00000012;
 }
 
-h1 { font-size: 30px; }
+h1 {
+  font-size: 30px;
+}
 
-p { line-height: 1.8; }
+p {
+  line-height: 1.8;
+}
 
 .choice {
   margin: 20px 0;
@@ -63,10 +69,20 @@ button {
   cursor: pointer;
 }
 
+button:hover {
+  opacity: 0.85;
+}
+
+.back {
+  display: inline-block;
+  margin-top: 22px;
+  color: #a65d73;
+  text-decoration: none;
+}
+
 #status {
   margin-top: 18px;
 }
-
 </style>
 </head>
 
@@ -82,62 +98,80 @@ I'd love to hear what you have to say.
 </p>
 
 <div class="choice">
-  <strong>Your answer:</strong>
-  <p id="selectedAnswer">No answer selected yet.</p>
+<strong>Your answer:</strong>
+<p id="selectedAnswer">Loading...</p>
 </div>
 
-<form id="answerForm">
-  <textarea id="message"
-    placeholder="Write your message here..."
-    required></textarea>
+<form
+action="https://docs.google.com/forms/d/e/1FAIpQLSfZBhzm3k61XlrMjeTeP5yS6v7PwpCMM1cG0HDY34sf1yB1JA/formResponse"
+method="POST"
+target="hidden_iframe"
+id="answerForm">
 
-  <br>
+<input
+type="hidden"
+name="entry.925893276"
+id="answerInput">
 
-  <button type="submit">SEND ANSWER ♡</button>
+<textarea
+name="entry.1586313468"
+placeholder="Write your message for me here..."
+required></textarea>
+
+<br>
+
+<button type="submit" id="sendButton">
+SEND ANSWER ♡
+</button>
+
 </form>
 
+<iframe
+name="hidden_iframe"
+id="hidden_iframe"
+style="display:none;">
+</iframe>
+
 <p id="status"></p>
+
+<a class="back" href="page5.html">
+← Back to the previous page
+</a>
 
 </div>
 
 <script>
-const choice = localStorage.getItem("herAnswer");
+const answer = localStorage.getItem("herAnswer");
 
 document.getElementById("selectedAnswer").textContent =
-  choice || "No answer selected yet.";
+answer || "No answer selected";
 
-// Replace these placeholders after setting up Google Forms.
-const GOOGLE_FORM_URL =
-  "PASTE_YOUR_GOOGLE_FORM_RESPONSE_URL_HERE";
+document.getElementById("answerInput").value =
+answer || "";
 
-const ANSWER_ENTRY = "entry.XXXXXXXX";
-const MESSAGE_ENTRY = "entry.YYYYYYYY";
+const form = document.getElementById("answerForm");
+const status = document.getElementById("status");
+const button = document.getElementById("sendButton");
+const iframe = document.getElementById("hidden_iframe");
 
-document.getElementById("answerForm")
-.addEventListener("submit", function(event) {
-  event.preventDefault();
+let submitted = false;
 
-  if (GOOGLE_FORM_URL.startsWith("PASTE_")) {
-    document.getElementById("status").textContent =
-      "The form connection is not set up yet.";
-    return;
-  }
+form.addEventListener("submit", function() {
+  submitted = true;
+  button.disabled = true;
+  button.textContent = "SENDING...";
 
-  const data = new URLSearchParams();
-  data.append(ANSWER_ENTRY, choice || "No answer selected");
-  data.append(MESSAGE_ENTRY,
-    document.getElementById("message").value);
+  status.textContent = "Sending your message...";
 
-  fetch(GOOGLE_FORM_URL, {
-    method: "POST",
-    mode: "no-cors",
-    body: data
-  });
+  iframe.onload = function() {
+    if (!submitted) return;
 
-  document.getElementById("status").textContent =
-    "Thank you for sending your answer. ♡";
+    status.textContent =
+      "Thank you for sharing your answer. ♡";
 
-  document.getElementById("answerForm").reset();
+    button.textContent = "SENT ♡";
+    form.querySelector("textarea").disabled = true;
+  };
 });
 </script>
 
