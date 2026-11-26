@@ -7,9 +7,7 @@
 <title>Send Your Answer ♡</title>
 
 <style>
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 body {
   margin: 0;
@@ -33,13 +31,9 @@ body {
   box-shadow: 0 8px 25px #00000012;
 }
 
-h1 {
-  font-size: 30px;
-}
+h1 { font-size: 30px; }
 
-p {
-  line-height: 1.8;
-}
+p { line-height: 1.8; }
 
 .choice {
   margin: 20px 0;
@@ -69,17 +63,6 @@ button {
   cursor: pointer;
 }
 
-button:hover {
-  opacity: 0.85;
-}
-
-.back {
-  display: inline-block;
-  margin-top: 22px;
-  color: #a65d73;
-  text-decoration: none;
-}
-
 #status {
   margin-top: 18px;
 }
@@ -99,80 +82,53 @@ I'd love to hear what you have to say.
 
 <div class="choice">
 <strong>Your answer:</strong>
-<p id="selectedAnswer">Loading...</p>
+<p id="selectedAnswer"></p>
 </div>
 
 <form
-action="https://docs.google.com/forms/d/e/1FAIpQLSfZBhzm3k61XlrMjeTeP5yS6v7PwpCMM1cG0HDY34sf1yB1JA/formResponse"
-method="POST"
-target="hidden_iframe"
-id="answerForm">
+  action="https://docs.google.com/forms/d/e/1FAIpQLSfZBhzm3k61XlrMjeTeP5yS6v7PwpCMM1cG0HDY34sf1yB1JA/formResponse"
+  method="POST"
+  target="hidden_iframe"
+  id="answerForm">
 
 <input
-type="hidden"
-name="entry.925893276"
-id="answerInput">
+  type="hidden"
+  name="entry.925893276"
+  id="answerInput">
 
 <textarea
-name="entry.1586313468"
-placeholder="Write your message for me here..."
-required></textarea>
+  name="entry.1586313468"
+  placeholder="Write your message here..."
+  required></textarea>
 
 <br>
 
-<button type="submit" id="sendButton">
-SEND ANSWER ♡
-</button>
+<button type="submit">SEND ANSWER ♡</button>
 
 </form>
 
-<iframe
-name="hidden_iframe"
-id="hidden_iframe"
-style="display:none;">
-</iframe>
+<iframe name="hidden_iframe" style="display:none;"></iframe>
 
 <p id="status"></p>
-
-<a class="back" href="page5.html">
-← Back to the previous page
-</a>
 
 </div>
 
 <script>
-const answer = localStorage.getItem("herAnswer");
+const choice = localStorage.getItem("herAnswer");
 
 document.getElementById("selectedAnswer").textContent =
-answer || "No answer selected";
+  choice || "No answer selected";
 
 document.getElementById("answerInput").value =
-answer || "";
+  choice || "";
 
-const form = document.getElementById("answerForm");
-const status = document.getElementById("status");
-const button = document.getElementById("sendButton");
-const iframe = document.getElementById("hidden_iframe");
-
-let submitted = false;
-
-form.addEventListener("submit", function() {
-  submitted = true;
-  button.disabled = true;
-  button.textContent = "SENDING...";
-
-  status.textContent = "Sending your message...";
-
-  iframe.onload = function() {
-    if (!submitted) return;
-
-    status.textContent =
+document.getElementById("answerForm").addEventListener(
+  "submit",
+  function() {
+    document.getElementById("status").textContent =
       "Thank you for sharing your answer. ♡";
-
-    button.textContent = "SENT ♡";
-    form.querySelector("textarea").disabled = true;
-  };
-});
+  }
+);
 </script>
 
 </body>
