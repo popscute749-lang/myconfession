@@ -1,0 +1,145 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Send Your Answer ♡</title>
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Georgia, serif;
+  background: linear-gradient(135deg, #fff0f3, #f8dce5);
+  color: #684750;
+}
+
+.container {
+  width: 100%;
+  max-width: 600px;
+  padding: 30px 22px;
+  background: #ffffffdf;
+  border-radius: 22px;
+  text-align: center;
+  box-shadow: 0 8px 25px #00000012;
+}
+
+h1 { font-size: 30px; }
+
+p { line-height: 1.8; }
+
+.choice {
+  margin: 20px 0;
+  padding: 14px;
+  border-radius: 12px;
+  background: #fce7ed;
+}
+
+textarea {
+  width: 100%;
+  min-height: 150px;
+  padding: 15px;
+  border: 1px solid #e6c4ce;
+  border-radius: 12px;
+  font: 15px Georgia, serif;
+  resize: vertical;
+}
+
+button {
+  margin-top: 20px;
+  padding: 14px 25px;
+  border: none;
+  border-radius: 25px;
+  background: #c76b83;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+#status {
+  margin-top: 18px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Send Your Answer ♡</h1>
+
+<p>
+Thank you for making it this far.
+I'd love to hear what you have to say.
+</p>
+
+<div class="choice">
+  <strong>Your answer:</strong>
+  <p id="selectedAnswer">No answer selected yet.</p>
+</div>
+
+<form id="answerForm">
+  <textarea id="message"
+    placeholder="Write your message here..."
+    required></textarea>
+
+  <br>
+
+  <button type="submit">SEND ANSWER ♡</button>
+</form>
+
+<p id="status"></p>
+
+</div>
+
+<script>
+const choice = localStorage.getItem("herAnswer");
+
+document.getElementById("selectedAnswer").textContent =
+  choice || "No answer selected yet.";
+
+// Replace these placeholders after setting up Google Forms.
+const GOOGLE_FORM_URL =
+  "PASTE_YOUR_GOOGLE_FORM_RESPONSE_URL_HERE";
+
+const ANSWER_ENTRY = "entry.XXXXXXXX";
+const MESSAGE_ENTRY = "entry.YYYYYYYY";
+
+document.getElementById("answerForm")
+.addEventListener("submit", function(event) {
+  event.preventDefault();
+
+  if (GOOGLE_FORM_URL.startsWith("PASTE_")) {
+    document.getElementById("status").textContent =
+      "The form connection is not set up yet.";
+    return;
+  }
+
+  const data = new URLSearchParams();
+  data.append(ANSWER_ENTRY, choice || "No answer selected");
+  data.append(MESSAGE_ENTRY,
+    document.getElementById("message").value);
+
+  fetch(GOOGLE_FORM_URL, {
+    method: "POST",
+    mode: "no-cors",
+    body: data
+  });
+
+  document.getElementById("status").textContent =
+    "Thank you for sending your answer. ♡";
+
+  document.getElementById("answerForm").reset();
+});
+</script>
+
+</body>
+</html>
