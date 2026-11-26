@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f9e5ec">
+<title>My Confession ♡</title>
+<style>
+:root{--pink:#f7dce6;--deep:#a34f70;--rose:#d98ca8;--cream:#fffaf8;--ink:#654453}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:linear-gradient(180deg,#fff8fa,#f9e7ed 55%,#fff9f7);color:var(--ink);font-family:Georgia,'Times New Roman',serif}
+button{font:inherit}
+.hero{min-height:100svh;display:grid;place-items:center;padding:28px 18px;position:relative;overflow:hidden}
+.hero:before,.hero:after{content:"♡";position:absolute;color:#e9b5c8;opacity:.45;font-size:90px}
+.hero:before{top:8%;left:8%;transform:rotate(-15deg)}.hero:after{right:8%;bottom:9%;transform:rotate(15deg)}
+.cover{text-align:center;max-width:540px;width:100%;position:relative;z-index:1}
+.kicker{letter-spacing:.22em;text-transform:uppercase;font:11px Arial,sans-serif;color:#b4778e}
+h1{font-size:clamp(42px,10vw,68px);font-weight:normal;font-style:italic;color:var(--deep);margin:16px 0 10px}
+.subtitle{font-size:17px;line-height:1.7;color:#946879}
+.envelope-wrap{margin:34px auto 22px;width:210px;height:145px;position:relative;filter:drop-shadow(0 12px 18px #c88fa344)}
+.envelope{position:absolute;inset:24px 0 0;background:#e9a9bf;border-radius:8px;overflow:hidden}
+.envelope:before,.envelope:after{content:"";position:absolute;bottom:0;width:0;height:0;border-style:solid}
+.envelope:before{left:0;border-width:0 105px 83px 0;border-color:transparent transparent #f4c8d7 transparent}
+.envelope:after{right:0;border-width:0 0 83px 105px;border-color:transparent transparent #f0bfd0 transparent}
+.flap{position:absolute;top:24px;left:0;width:0;height:0;border-left:105px solid transparent;border-right:105px solid transparent;border-top:78px solid #d98ca8;transform-origin:top;transition:transform .7s;z-index:3}
+.heart{position:absolute;z-index:4;left:50%;top:69px;transform:translateX(-50%);font-size:28px;color:#fff}
+.opened .flap{transform:rotateX(180deg)}
+.open-btn,.next-btn{border:0;border-radius:999px;background:var(--deep);color:white;padding:13px 25px;cursor:pointer;box-shadow:0 6px 16px #a34f7033;transition:transform .2s,background .2s}
+.open-btn:hover,.next-btn:hover{transform:translateY(-2px);background:#8f3f60}
+main{max-width:850px;margin:auto;padding:0 18px 70px}
+section{padding:58px 0;scroll-margin-top:20px}
+.panel{background:#fffaf8cc;border:1px solid #f0d4df;border-radius:22px;padding:clamp(22px,5vw,40px);box-shadow:0 12px 35px #b66c8620}
+h2{font-weight:normal;font-style:italic;font-size:clamp(29px,6vw,42px);color:var(--deep);margin:0 0 18px}
+p{font-size:17px;line-height:1.85;margin:12px 0}
+.center{text-align:center}
+.small{font:11px Arial,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:#b4778e}
+.quote{font-style:italic;font-size:clamp(20px,4vw,26px);color:#a34f70;line-height:1.6}
+.photo{width:100%;height:auto;display:block;border-radius:12px;border:1px solid #edd4de;box-shadow:0 8px 22px #8c52651c;background:white}
+.image-card{margin:24px 0 0;padding:12px;background:#fff;border-radius:16px;border:1px solid #f0d4df}
+.caption{text-align:center;font:12px Arial,sans-serif;color:#a47787;margin:10px 0 2px}
+.math-intro{margin-bottom:28px}
+.final{background:linear-gradient(145deg,#f7dce6,#fff7f8);text-align:center}
+.footer{text-align:center;padding:28px 10px 45px;color:#b4778e;font-size:13px}
+.hidden{display:none}
+#letter{animation:fade .8s ease}
+@keyframes fade{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+@media(min-width:700px){.image-card{padding:18px}.photo{max-width:100%;margin:auto}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="cover">
+    <div class="kicker">A little something for you</div>
+    <h1>My Confession</h1>
+    <div class="subtitle">Some feelings are too special to leave unspoken.</div>
+    <div class="envelope-wrap" id="envelope">
+      <div class="envelope"></div><div class="flap"></div><div class="heart">♡</div>
+    </div>
+    <button class="open-btn" id="openBtn">OPEN ME ♡</button>
+    <p class="small" style="margin-top:18px">Made with a little courage and a lot of feeling</p>
+  </div>
+</header>
+
+<main>
+  <section id="letter" class="hidden">
+    <div class="panel center">
+      <div class="small">A note before you begin</div>
+      <h2>Hey, you.</h2>
+      <p class="quote">I made something special for you. I hope you take your time exploring every little page of this website. ♡</p>
+      <button class="next-btn" onclick="document.querySelector('#reason').scrollIntoView({behavior:'smooth'})">Continue ♡</button>
+    </div>
+  </section>
+
+  <section id="reason">
+    <div class="panel">
+      <div class="small">A little explanation</div>
+      <h2>Reason Why I Made This</h2>
+      <p>I made this website simply to confess my feelings for you.</p>
+      <p>I know you already know that I like you. But I heard that you're really straight, so I started avoiding you whenever you were around. Not because I didn't want to be near you, but because I didn't want to make things awkward or put you in an uncomfortable position.</p>
+      <p>I don't expect anything in return. I just wanted to be honest about how I feel instead of keeping these feelings to myself.</p>
+      <p>I made this little website because I wanted to express those feelings in my own way. And whatever your response may be, I hope you know that I genuinely mean every word.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="panel center">
+      <div class="small">Before the numbers</div>
+      <p class="quote">So, I tried putting my feelings into numbers. Not because they could measure how much I like you, but because I wanted to find another way to show you just how genuine my feelings are. 🌷</p>
+      <button class="next-btn" onclick="document.querySelector('#math').scrollIntoView({behavior:'smooth'})">Show me the numbers ♡</button>
+    </div>
+  </section>
+
+  <section id="math">
+    <div class="math-intro center">
+      <div class="small">A personal assessment</div>
+      <h2>The Mathematics of My Feelings</h2>
+      <p>Some calculations, a few honest answers, and one feeling behind it all.</p>
+    </div>
+
+    <div class="image-card">
+      <img class="photo" src="images/01-data-method.jpg" alt="Data method and five-point rating scale">
+      <div class="caption">01 · Data Method and Rating Scale</div>
+    </div>
+    <div class="image-card">
+      <img class="photo" src="images/02-questionnaire.jpg" alt="Seven-question personal questionnaire and ratings">
+      <div class="caption">02 · My Questionnaire</div>
+    </div>
+    <div class="image-card">
+      <img class="photo" src="images/03-results-and-synthesis.jpg" alt="Frequency, percentage distribution, and synthesis">
+      <div class="caption">03 · Results and Synthesis</div>
+    </div>
+  </section>
+
+  <section class="final" id="final-question">
+    <div class="panel center">
+      <div class="small">A question from the heart</div>
+      <h2>So, what do you think?</h2>
+      <p class="quote">So, after all these calculations, do I have a chance? Hahahaha!</p>
+      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:24px">
+        <button class="next-btn" onclick="document.getElementById('answer').textContent='You just made this little confession even more special. Thank you. ♡'">YES, YOU CAN ♡</button>
+        <button class="open-btn" style="background:#d9a0b4" onclick="document.getElementById('answer').textContent='That’s okay. Take all the time you need. Thank you for hearing me out. 🌷'">I NEED TIME 🌷</button>
+      </div>
+      <p id="answer" class="quote" aria-live="polite"></p>
+      <p>Whatever your answer, thank you for taking the time to read this.</p>
+      <div style="font-size:28px;color:#c77d99;margin-top:20px">♡</div>
+    </div>
+  </section>
+  <div class="footer">A little website, made just for you · ♡</div>
+</main>
+<script>
+const btn=document.getElementById('openBtn');
+const env=document.getElementById('envelope');
+const letter=document.getElementById('letter');
+btn.addEventListener('click',()=>{
+  env.classList.add('opened');
+  btn.textContent='OPENED WITH LOVE ♡';
+  btn.disabled=true;
+  letter.classList.remove('hidden');
+  setTimeout(()=>letter.scrollIntoView({behavior:'smooth',block:'center'}),350);
+});
+</script>
+</body>
+</html>
