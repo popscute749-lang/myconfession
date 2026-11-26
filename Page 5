@@ -1,0 +1,120 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>One Last Question</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  padding: 25px 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Georgia, serif;
+  text-align: center;
+  color: #684750;
+  background: linear-gradient(135deg, #fff0f3, #f8dce5);
+}
+
+.container {
+  width: 100%;
+  max-width: 650px;
+  padding: 35px 22px;
+  background: #ffffffc9;
+  border-radius: 22px;
+  box-shadow: 0 8px 25px #00000012;
+}
+
+h1 {
+  font-size: 32px;
+}
+
+.message {
+  line-height: 1.9;
+  margin: 25px 0;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+button {
+  border: none;
+  border-radius: 25px;
+  padding: 14px 22px;
+  font-size: 15px;
+  cursor: pointer;
+  color: white;
+  background: #c76b83;
+}
+
+button:hover {
+  opacity: 0.85;
+}
+
+.time {
+  background: #b99aa3;
+}
+
+#response {
+  margin-top: 28px;
+  line-height: 1.8;
+  font-size: 17px;
+}
+
+.back {
+  display: inline-block;
+  margin-top: 30px;
+  color: #a65d73;
+  text-decoration: none;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>One Last Question ♡</h1>
+
+<p class="message">
+So, after all these calculations,
+do I have a chance? Hahahaha!
+</p>
+
+<div class="buttons">
+  <button onclick="answerYes()">YES, YOU CAN ♡</button>
+  <button class="time" onclick="answerTime()">I NEED TIME 🌷</button>
+</div>
+
+<p id="response"></p>
+
+<a class="back" href="page4.html">← Back to the previous page</a>
+
+</div>
+
+<script>
+function answerYes() {
+  document.getElementById("response").innerHTML =
+  "You just made this little confession even more special. Thank you. ♡";
+}
+
+function answerTime() {
+  document.getElementById("response").innerHTML =
+  "That’s okay. Take all the time you need. Thank you for hearing me out. 🌷";
+}
+</script>
+
+</body>
+</html>
