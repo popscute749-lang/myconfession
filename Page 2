@@ -1,0 +1,120 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#f9e5ec">
+<title>Hey, You ♡</title>
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 22px;
+  background: linear-gradient(145deg,#fff8fa,#f7dce6,#fff9f7);
+  color: #654453;
+  font-family: Georgia,serif;
+}
+
+.panel {
+  max-width: 650px;
+  width: 100%;
+  padding: clamp(28px,7vw,55px);
+  text-align: center;
+  background: #fffaf8e8;
+  border: 1px solid #f0d4df;
+  border-radius: 24px;
+  box-shadow: 0 12px 35px #b66c8620;
+  animation: fade .8s ease;
+}
+
+.small {
+  font: 11px Arial,sans-serif;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: #b4778e;
+}
+
+h1 {
+  font-size: clamp(38px,9vw,55px);
+  font-style: italic;
+  font-weight: normal;
+  color: #a34f70;
+  margin: 22px 0;
+}
+
+.quote {
+  font-size: clamp(19px,4vw,25px);
+  line-height: 1.8;
+  color: #a34f70;
+}
+
+p {
+  line-height: 1.8;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+button {
+  border: 0;
+  border-radius: 999px;
+  padding: 13px 25px;
+  background: #a34f70;
+  color: white;
+  font: inherit;
+  cursor: pointer;
+}
+
+.back {
+  background: #d9a0b4;
+}
+
+@keyframes fade {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+</style>
+</head>
+
+<body>
+
+<main class="panel">
+
+  <div class="small">A note before you begin</div>
+
+  <h1>Hey, you.</h1>
+
+  <p class="quote">
+    I made something special for you. I hope you take your time
+    exploring every little page of this website. ♡
+  </p>
+
+  <p>
+    There's a little story I want to share with you.
+  </p>
+
+  <div class="buttons">
+    <button class="back" onclick="location.href='index.html'">
+      ← Back
+    </button>
+
+    <button onclick="location.href='page3.html'">
+      Continue ♡ →
+    </button>
+  </div>
+
+</main>
+
+</body>
+</html>
