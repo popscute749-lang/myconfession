@@ -4,8 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#f9e5ec">
-<title>The Mathematics of My Feelings ♡</title>
+<title>The Mathematics of My Feelings</title>
 
 <style>
 * {
@@ -14,179 +13,117 @@
 
 body {
   margin: 0;
-  min-height: 100vh;
   padding: 30px 18px;
-  background: linear-gradient(180deg,#fff8fa,#f9e7ed 55%,#fff9f7);
-  color: #654453;
-  font-family: Georgia,serif;
+  min-height: 100vh;
+  font-family: Georgia, serif;
+  background: linear-gradient(135deg, #fff0f3, #fce4ec);
+  color: #60434b;
+  text-align: center;
 }
 
-main {
-  max-width: 850px;
+.container {
+  max-width: 750px;
   margin: auto;
 }
 
-.intro {
-  text-align: center;
-  padding: 35px 10px;
-}
-
-.small {
-  font: 11px Arial,sans-serif;
-  letter-spacing: .2em;
-  text-transform: uppercase;
-  color: #b4778e;
-}
-
 h1 {
-  font-size: clamp(32px,8vw,48px);
-  font-weight: normal;
-  font-style: italic;
-  color: #a34f70;
-  margin: 18px 0;
+  font-size: 32px;
+  margin-top: 25px;
 }
 
-.intro p {
-  font-size: 17px;
+.intro {
   line-height: 1.8;
+  margin: 20px auto 35px;
 }
 
-.image-card {
-  margin: 25px 0;
+.photo-card {
+  background: #fff;
   padding: 14px;
-  background: #fffaf8;
-  border: 1px solid #f0d4df;
-  border-radius: 18px;
-  box-shadow: 0 10px 25px #b66c8620;
-  animation: fade .8s ease;
+  margin: 25px auto;
+  border-radius: 15px;
+  box-shadow: 0 5px 18px #00000012;
 }
 
-.photo {
+.photo-card img {
   display: block;
   width: 100%;
   height: auto;
-  max-height: none;
   object-fit: contain;
-  object-position: center;
   border-radius: 10px;
-  background: #fff;
 }
 
 .caption {
-  text-align: center;
-  font: 12px Arial,sans-serif;
-  color: #a47787;
-  margin: 13px 0 3px;
-  letter-spacing: .04em;
+  margin: 14px 0 5px;
+  font-style: italic;
 }
 
 .buttons {
   display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  justify-content: center;
   gap: 12px;
-  margin: 35px 0 20px;
+  flex-wrap: wrap;
+  margin: 35px 0;
+}
+
+a {
+  text-decoration: none;
 }
 
 button {
-  border: 0;
-  border-radius: 999px;
+  border: none;
   padding: 13px 24px;
-  background: #a34f70;
+  border-radius: 25px;
+  background: #c76b83;
   color: white;
-  font: inherit;
+  font-size: 15px;
   cursor: pointer;
 }
 
+button:hover {
+  background: #a94f68;
+}
+
 .back {
-  background: #d9a0b4;
-}
-
-@keyframes fade {
-  from {
-    opacity: 0;
-    transform: translateY(12px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.footer {
-  text-align: center;
-  padding: 25px 10px;
-  color: #b4778e;
-  font-size: 13px;
+  background: #bda1a8;
 }
 </style>
 </head>
 
 <body>
+<div class="container">
 
-<main>
+<h1>The Mathematics of My Feelings</h1>
 
-  <header class="intro">
-    <div class="small">A personal assessment</div>
+<p class="intro">
+Some calculations, a few honest answers,
+and one feeling behind it all.
+</p>
 
-    <h1>The Mathematics of My Feelings</h1>
+<div class="photo-card">
+  <img src="01-data-method.jpg" alt="Data and method">
+  <p class="caption">The data and the method.</p>
+</div>
 
-    <p>
-      Some calculations, a few honest answers,
-      and one feeling behind it all.
-    </p>
-  </header>
+<div class="photo-card">
+  <img src="02-questionnaire.jpg" alt="Questionnaire">
+  <p class="caption">A few questions and honest answers.</p>
+</div>
 
-  <div class="image-card">
-    <img
-      class="photo"
-      src="images/01-data-method.jpg"
-      alt="Data Method and Five-Point Rating Scale"
-    >
-    <div class="caption">
-      01 · Data Method and Rating Scale
-    </div>
-  </div>
+<div class="photo-card">
+  <img src="03-results-and-synthesis.jpg" alt="Results and synthesis">
+  <p class="caption">The results and synthesis.</p>
+</div>
 
-  <div class="image-card">
-    <img
-      class="photo"
-      src="images/02-questionnaire.jpg"
-      alt="Seven-Question Personal Questionnaire"
-    >
-    <div class="caption">
-      02 · My Questionnaire
-    </div>
-  </div>
+<div class="buttons">
+  <a href="page3.html">
+    <button class="back">← Back</button>
+  </a>
 
-  <div class="image-card">
-    <img
-      class="photo"
-      src="images/03-results-and-synthesis.jpg"
-      alt="Frequency, Percentage Distribution, and Synthesis"
-    >
-    <div class="caption">
-      03 · Results and Synthesis
-    </div>
-  </div>
+  <a href="page5.html">
+    <button>Continue →</button>
+  </a>
+</div>
 
-  <div class="buttons">
-    <button class="back"
-      onclick="location.href='page3.html'">
-      ← Back
-    </button>
-
-    <button
-      onclick="location.href='page5.html'">
-      Continue ♡ →
-    </button>
-  </div>
-
-  <div class="footer">
-    A little website, made just for you · ♡
-  </div>
-
-</main>
-
+</div>
 </body>
 </html>
