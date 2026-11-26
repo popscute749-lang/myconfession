@@ -1,0 +1,124 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#f9e5ec">
+<title>Reason Why I Made This ♡</title>
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 22px;
+  background: linear-gradient(145deg,#fff8fa,#f7dce6,#fff9f7);
+  color: #654453;
+  font-family: Georgia,serif;
+}
+
+.panel {
+  max-width: 750px;
+  width: 100%;
+  padding: clamp(25px,6vw,50px);
+  background: #fffaf8e8;
+  border: 1px solid #f0d4df;
+  border-radius: 24px;
+  box-shadow: 0 12px 35px #b66c8620;
+  animation: fade .8s ease;
+}
+
+.small {
+  font: 11px Arial,sans-serif;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: #b4778e;
+}
+
+h1 {
+  font-size: clamp(34px,8vw,48px);
+  font-weight: normal;
+  font-style: italic;
+  color: #a34f70;
+  margin: 20px 0;
+}
+
+p {
+  font-size: 17px;
+  line-height: 1.9;
+  margin: 16px 0;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+button {
+  border: 0;
+  border-radius: 999px;
+  padding: 13px 25px;
+  background: #a34f70;
+  color: white;
+  font: inherit;
+  cursor: pointer;
+}
+
+.back {
+  background: #d9a0b4;
+}
+
+@keyframes fade {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+</style>
+</head>
+
+<body>
+
+<main class="panel">
+
+  <div class="small">A little explanation</div>
+
+  <h1>Reason Why I Made This</h1>
+
+  <p>
+    I made this website simply to confess my feelings for you.
+  </p>
+
+  <p>
+    I know you already know that I like you. But I heard that you're really straight, so I started avoiding you whenever you were around. Not because I didn't want to be near you, but because I didn't want to make things awkward or put you in an uncomfortable position.
+  </p>
+
+  <p>
+    I don't expect anything in return. I just wanted to be honest about how I feel instead of keeping these feelings to myself.
+  </p>
+
+  <p>
+    I made this little website because I wanted to express those feelings in my own way. And whatever your response may be, I hope you know that I genuinely mean every word.
+  </p>
+
+  <div class="buttons">
+
+    <button class="back" onclick="location.href='page2.html'">
+      ← Back
+    </button>
+
+    <button onclick="location.href='page4.html'">
+      Show me the numbers ♡ →
+    </button>
+
+  </div>
+
+</main>
+
+</body>
+</html>
